@@ -1,79 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <!-- <filter>
-  	<filter-name>ExceptionFilter</filter-name>
-  	<filter-class>util.ExceptionFilter</filter-class>
-  	<init-param>
-  		<param-name>errorPage</param-name>
-  		<param-value>/error.jsp</param-value>
-  	</init-param>
-  </filter>
-  <filter-mapping>
-  	<filter-name>ExceptionFilter</filter-name>
-  	<url-pattern>*</url-pattern>
-  </filter-mapping> -->
   <error-page>
-  	<exception-type>Exception</exception-type>
-  	<location>/error.jsp</location>
+    <exception-type>Exception</exception-type>
+    <location>/error.jsp</location>
   </error-page>
- 
   
-  <servlet>
-    <description></description>
-    <display-name>ShowHeader</display-name>
-    <servlet-name>ShowHeader</servlet-name>
-    <servlet-class>action.ShowHeader</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>ShowHeader</servlet-name>
-    <url-pattern>/ShowHeader</url-pattern>
-  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>ShowContent</display-name>
     <servlet-name>ShowContent</servlet-name>
-    <servlet-class>action.ShowContent</servlet-class>
+    <servlet-class>com.ericsson.jigsaw.simulator.mail.web.action.ShowContentServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShowContent</servlet-name>
     <url-pattern>/ShowContent</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
-    <display-name>HandleAttachments</display-name>
-    <servlet-name>HandleAttachments</servlet-name>
-    <servlet-class>action.HandleAttachments</servlet-class>
+    <display-name>DownloadAttachments</display-name>
+    <servlet-name>DownloadAttachments</servlet-name>
+    <servlet-class>com.ericsson.jigsaw.simulator.mail.web.action.DownloadAttachmentServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>HandleAttachments</servlet-name>
-    <url-pattern>/HandleAttachments</url-pattern>
+    <servlet-name>DownloadAttachments</servlet-name>
+    <url-pattern>/DownloadAttachments</url-pattern>
   </servlet-mapping>
+  
   <servlet>
     <description></description>
-    <display-name>ShowUsers</display-name>
-    <servlet-name>ShowUsers</servlet-name>
-    <servlet-class>action.ShowUsers</servlet-class>
+    <display-name>DownloadMedia</display-name>
+    <servlet-name>DownloadMedia</servlet-name>
+    <servlet-class>com.ericsson.jigsaw.simulator.mail.web.action.DownloadMediaServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ShowUsers</servlet-name>
-    <url-pattern>/ShowUsers</url-pattern>
-  </servlet-mapping>
+    <servlet-name>DownloadMedia</servlet-name>
+    <url-pattern>/DownloadMedia</url-pattern>
+  </servlet-mapping> 
+  
   <servlet>
     <description></description>
     <display-name>ShowUserMails</display-name>
     <servlet-name>ShowUserMails</servlet-name>
-    <servlet-class>action.ShowUserMails</servlet-class>
+    <servlet-class>com.ericsson.jigsaw.simulator.mail.web.action.ShowUserMailsServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ShowUserMails</servlet-name>
     <url-pattern>/ShowUserMails</url-pattern>
   </servlet-mapping>
-  <welcome-file-list>
-  	<welcome-file>index.html</welcome-file>
-  </welcome-file-list>
   
-  <!-- test  -->
-   <servlet>
+  <servlet>
+    <description></description>
+    <display-name>ManageUsers</display-name>
+    <servlet-name>ManageUsers</servlet-name>
+    <servlet-class>com.ericsson.jigsaw.simulator.mail.web.action.ManageUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageUsers</servlet-name>
+    <url-pattern>/ManageUsers</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <description></description>
+    <display-name>ManageDomains</display-name>
+    <servlet-name>ManageDomains</servlet-name>
+    <servlet-class>com.ericsson.jigsaw.simulator.mail.web.action.ManageDomainsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManageDomains</servlet-name>
+    <url-pattern>/ManageDomains</url-pattern>
+  </servlet-mapping>
+  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+  </welcome-file-list>
+  <!-- test -->
+  <!-- <servlet>
     <servlet-name>Hello</servlet-name>
     <servlet-class>Test.HelloServlet</servlet-class>
   </servlet>
@@ -113,23 +115,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ListUsers</display-name>
-    <servlet-name>ListUsers</servlet-name>
-    <servlet-class>Test.ListUsers</servlet-class>
+    <display-name>ShowHeader</display-name>
+    <servlet-name>ShowHeader</servlet-name>
+    <servlet-class>Test.ShowHeaderServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ListUsers</servlet-name>
-    <url-pattern>/ListUsers</url-pattern>
+    <servlet-name>ShowHeader</servlet-name>
+    <url-pattern>/ShowHeader</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ListDomains</display-name>
-    <servlet-name>ListDomains</servlet-name>
-    <servlet-class>Test.ListDomains</servlet-class>
+    <display-name>ShowUsers</display-name>
+    <servlet-name>ShowUsers</servlet-name>
+    <servlet-class>Test.ShowUsersServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ListDomains</servlet-name>
-    <url-pattern>/ListDomains</url-pattern>
-  </servlet-mapping>
-  
+    <servlet-name>ShowUsers</servlet-name>
+    <url-pattern>/ShowUsers</url-pattern>
+  </servlet-mapping> -->
 </web-app>

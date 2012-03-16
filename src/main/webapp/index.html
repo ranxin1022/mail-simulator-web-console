@@ -1,28 +1,41 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Mail Simulator Web Console index page</title>
+<link href="css/mail-simulator-style.css" rel="stylesheet" type="text/css" />
 </head>
+
 <body>
-	<table border=1>
-		<tr>
-			<td width=200 align='center'>
-				<img alt='' src='picture/ericsson.png'>
+
+	<table>
+		<tr class="tr_first_row">
+			<td class="td_first_col">
+				<img alt='' src='picture/ericsson.png'/>
 			</td>
 			
-			<td align='right'><br><br><br><br><a href='operateUser.jsp' ><font size='5'>User Management</font></a> &nbsp;  &nbsp;<a href='operateDomain.jsp'><font size='5'>Domain Management</font></a>&nbsp;&nbsp;
+			<td class="td_second_col">
+			<div style="text-align: right;width:100%"><font size="5px">Mail Simulator Web Console-index page</font></div>
+			<br/><br/><br/><br/>
+			<div align="right" ><a href='ManageUser.jsp' ><font size='3'>User Management</font></a> &nbsp;  &nbsp;<a href='ManageDomain.jsp'><font size='3'>Domain Management</font></a></div>&nbsp;&nbsp;
 			</td>
 		</tr>
-		<tr  height="600">
-			<td align="center" width=200>
-				<iframe width="100%" height="100%" frameborder=0 src='ShowUsers' scrolling="auto"></iframe>			
+		<tr >
+			<td><br/></td>
+			
+		</tr>
+		<tr class="tr_second_row">
+			
+			<td class="td_first_col">
+				<iframe class="iframe" frameborder="0" src='ShowUsers.jsp' scrolling="auto" ></iframe>			
 			</td>
-			<td align="right">
-				<iframe width="100%" name="right" height="100%" frameborder=0 src='ShowUserMails' scrolling="auto"></iframe>	
+			<td align="left">
+				<iframe width="100%" class="iframe" name="right"  frameborder=0 src='ShowUserMails' scrolling="auto" ></iframe>	
 			</td>
 		</tr>
-	
+		<tr><td colspan=2><iframe src="footer.html" frameborder=0 scrolling="no"></iframe></td></tr>
 	</table>
+
+
 </body>
 </html>

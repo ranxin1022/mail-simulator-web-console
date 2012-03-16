@@ -1,13 +1,16 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="java.util.*,model.User"
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="com.ericsson.jigsaw.simulator.mail.web.control.user.*,java.util.*,com.ericsson.jigsaw.simulator.mail.web.model.User"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Mail Simulator Web Console list all users</title>
 </head>
-<body>
-<% 	List<User> users =(ArrayList<User>)request.getAttribute("users");
+<link href="css/show-user-style.css" rel="stylesheet" type="text/css" />
+<body >
+<% 
+	UserControlImpl userControl = new UserControlImpl();
+	List<User> users =userControl.listUsers();
 	if(users==null){%>
 		<table>
 			<tr>
@@ -17,15 +20,17 @@
 	
   <%}else{
 %>
-	<table>
+	<table >
+		<tr><td align=center><img src="picture/user-sign.png"/><b>all users</b></td></tr>
 	<%  for(User user:users){ %>
-	<tr >
-		<td>
-			<font size='4'>
-				<a name='aUsername' target='right' href="ShowUserMails?id=<%=user.getName()%>"><%=user.getName()%></a>
-			</font>
-		</td>
-	</tr>
+		<tr >
+		
+			<td>
+				<font size='4'>
+					<a name='aUsername' target='right' href="ShowUserMails?id=<%=user.getName()%>"><%=user.getName()%></a>
+				</font>
+			</td>
+		</tr>
 	<%} 
 	}%>
 	</table>
